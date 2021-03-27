@@ -9,14 +9,12 @@
   <div class="content-text">
     <small>{{ item.sub_type_name }}</small>
     <p>{{ item.pd_name }}</p>
-    <div class="row price-cart-section">
-      <div class="col-md-6 price">
-        <p><span class="prod-price">BDT {{ item.pd_main_price }}</span> <small v-if="item.pd_offer_price"><del>{{ item.pd_offer_price }}</del></small></p>
+      <div class="price">
+        <p><span class="prod-price">BDT {{ item.pd_main_price }}</span> <small class="" v-if="item.pd_offer_price"><del>{{ item.pd_offer_price }}</del></small></p>
       </div>
-      <div class="col-md-6 cart">
-        <button class="btn btn-sm btn-danger btn-cart pl-2"><i class="fas fa-cart-plus"></i> Add</button>
+      <div class="cart">
+        <button class="btn-danger btn-sm btn-cart pl-2" variant="outline-primary"><i class="fas fa-cart-plus"></i> Add</button>
       </div>
-    </div>
   </div>
 </div>
 </b-col>
@@ -41,25 +39,22 @@ props:['products', 'loading'],
   padding: 0px 15px;
   border-radius: 5px;
   margin-top: 10px;
-  min-height: 323px;
   }
 
   .prod-price {
   color: #59C879;
   }
   .price{
-  float: left  !important;
   }
   .cart {
-  display: none;
+  visibility: hidden;
   }
   .prod-card:hover .cart {
-  display: block;
+  visibility: visible;
   transition: 1s ease-in;
   }
   .btn-cart {
-  float: right !important;
-  margin-top: 0px;
+  margin-bottom: 10px;
   background-color: #fd686a;
   border: none;
   box-shadow: 0 5px 7px 0 rgb(224, 88, 91);
