@@ -10,10 +10,10 @@
     <small>{{ item.sub_type_name }}</small>
     <p>{{ item.pd_name }}</p>
       <div class="price">
-        <p><span class="prod-price">BDT {{ item.pd_main_price }}</span> <small class="" v-if="item.pd_offer_price"><del>{{ item.pd_offer_price }}</del></small></p>
+        <p><span class="prod-price">BDT {{ item.pd_main_price }}</span> <small  v-if="item.pd_offer_price"><del>{{ item.pd_offer_price }}</del></small></p>
       </div>
       <div class="cart">
-        <button class="btn-danger btn-sm btn-cart pl-2" variant="outline-primary"><i class="fas fa-cart-plus"></i> Add</button>
+        <button class="btn-danger btn-sm btn-cart pl-2"><i class="fas fa-cart-plus"></i> Add</button>
       </div>
   </div>
 </div>
@@ -44,13 +44,7 @@ props:['products', 'loading'],
   .prod-price {
   color: #59C879;
   }
-  .price{
-  }
-  .cart {
-  visibility: hidden;
-  }
   .prod-card:hover .cart {
-  visibility: visible;
   transition: 1s ease-in;
   }
   .btn-cart {
