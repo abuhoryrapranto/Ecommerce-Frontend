@@ -564,4 +564,21 @@ body {
   text-align: left;
   background-color: #F6F9FC;
 }
+
+@media (max-width: 575.98px) {
+    .sidebar.toggled {
+  width: 0 !important;
+  overflow: hidden;
+}
+
+.sidebar.toggled #sidebarToggle::after {
+  content: '\f105';
+  font-family: 'Font Awesome 5 Free';
+  margin-left: 0.25rem;
+}
+
+.sidebar.toggled .sidebar-card {
+  display: none;
+}
+}
 </style>
