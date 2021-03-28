@@ -7,16 +7,16 @@
     <small class="brand">{{ item.brand_name }}</small>
   </div>
   <img class="img-fluid img-section mt-3" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1562074043/234.png" alt="" @click="productDetails(item.pd_slug)">
-  <div class="content-text">
+  <div class="content-text" @click="productDetails(item.pd_slug)">
     <small>{{ item.sub_type_name }}</small>
     <p>{{ item.pd_name }}</p>
       <div class="price float-left">
         <p><span class="prod-price">BDT {{ item.pd_offer_price ? item.pd_offer_price : item.pd_main_price }}</span> <small  v-if="item.pd_offer_price"><del>{{ item.pd_main_price }}</del></small></p>
       </div>
+  </div>
       <div class="cart text-right">
         <button class="btn-danger btn-sm btn-cart pl-2"><i class="fas fa-cart-plus"></i> Add</button>
       </div>
-  </div>
 </div>
 </b-col>
 <b-col sm="6" md="6" lg="6" xl="3" class="pb-3" v-if="products && loading == true" v-for="index in 8" :key="index">
@@ -53,6 +53,10 @@ methods: {
   }
 
   .img-section{
+    cursor: pointer;
+  }
+
+  .content-text {
     cursor: pointer;
   }
 
