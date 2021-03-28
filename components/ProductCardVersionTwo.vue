@@ -1,6 +1,6 @@
 <template>
 <b-row>
-<b-col sm="6" md="4" lg="3" xl="3" class="pb-3" v-if="products && loading == false" v-for="item in products" :key="item.pd_slug">
+<b-col sm="6" md="6" lg="6" xl="3" class="pb-3" v-if="products && loading == false" v-for="item in products" :key="item.pd_slug">
 <div class="prod-card">
   <div class="pt-1">
     <small class="brand">{{ item.brand_name }}</small>
@@ -9,16 +9,16 @@
   <div class="content-text">
     <small>{{ item.sub_type_name }}</small>
     <p>{{ item.pd_name }}</p>
-      <div class="price">
+      <div class="price float-left">
         <p><span class="prod-price">BDT {{ item.pd_main_price }}</span> <small  v-if="item.pd_offer_price"><del>{{ item.pd_offer_price }}</del></small></p>
       </div>
-      <div class="cart">
+      <div class="cart text-right">
         <button class="btn-danger btn-sm btn-cart pl-2"><i class="fas fa-cart-plus"></i> Add</button>
       </div>
   </div>
 </div>
 </b-col>
-<b-col sm="6" md="4" lg="3" xl="3" class="pb-3" v-if="products && loading == true" v-for="index in 8" :key="index">
+<b-col sm="6" md="6" lg="6" xl="3" class="pb-3" v-if="products && loading == true" v-for="index in 8" :key="index">
 <div class='area loading'>
   <div class='img-container'>
     <div class='img'>
@@ -37,18 +37,24 @@ props:['products', 'loading'],
   .prod-card {
   background: white;
   padding: 0px 15px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-top: 10px;
   }
 
   .prod-price {
   color: #59C879;
   }
+
+  .cart {
+    visibility: hidden;
+  }
+
   .prod-card:hover .cart {
+  visibility: visible;
   transition: 1s ease-in;
   }
   .btn-cart {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   background-color: #fd686a;
   border: none;
   box-shadow: 0 5px 7px 0 rgb(224, 88, 91);
