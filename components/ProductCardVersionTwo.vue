@@ -1,16 +1,17 @@
 <template>
+<!-- eslint-disable -->
 <b-row>
 <b-col sm="6" md="6" lg="6" xl="3" class="pb-3" v-if="products && loading == false" v-for="item in products" :key="item.pd_slug">
 <div class="prod-card">
   <div class="pt-1">
     <small class="brand">{{ item.brand_name }}</small>
   </div>
-  <img class="img-fluid mt-3" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1562074043/234.png" alt="">
+  <img class="img-fluid img-section mt-3" src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1562074043/234.png" alt="" @click="productDetails(item.pd_slug)">
   <div class="content-text">
     <small>{{ item.sub_type_name }}</small>
     <p>{{ item.pd_name }}</p>
       <div class="price float-left">
-        <p><span class="prod-price">BDT {{ item.pd_main_price }}</span> <small  v-if="item.pd_offer_price"><del>{{ item.pd_offer_price }}</del></small></p>
+        <p><span class="prod-price">BDT {{ item.pd_offer_price ? item.pd_offer_price : item.pd_main_price }}</span> <small  v-if="item.pd_offer_price"><del>{{ item.pd_main_price }}</del></small></p>
       </div>
       <div class="cart text-right">
         <button class="btn-danger btn-sm btn-cart pl-2"><i class="fas fa-cart-plus"></i> Add</button>
@@ -31,6 +32,16 @@
 <script>
 export default {
 props:['products', 'loading'],
+data() {
+  return {
+
+  }
+},
+methods: {
+  productDetails(slug) {
+    this.$router.push({path: `/${slug}`});
+  }
+},
 }
 </script>
 <style scoped>
@@ -39,6 +50,10 @@ props:['products', 'loading'],
   padding: 0px 15px;
   border-radius: 10px;
   margin-top: 10px;
+  }
+
+  .img-section{
+    cursor: pointer;
   }
 
   .prod-price {
