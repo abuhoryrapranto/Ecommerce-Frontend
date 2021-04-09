@@ -10,7 +10,7 @@
 	<div class="font-weight-bold col-md-7">
 		<div class="text-truncate float-left">{{item.name}}</div>
 		<br>
-		<div class="small text-gray-500">{{item.price}} x {{item.units}} = <span class="text-success"> {{item.price}}</span></div>
+		<div class="small text-gray-500">{{item.price/item.units}} x {{item.units}} = <span class="text-success"> {{item.price}}</span></div>
 	</div>
 	<div class="col-md-5">
 		<span class="text-danger" @click="removeCart(item.pd_slug)">Remove</span>
