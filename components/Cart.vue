@@ -1,6 +1,8 @@
 <template>
 <!-- eslint-disable -->
+
 <div>
+
 	<a class="dropdown-item d-flex align-items-center" href="#" v-for="item in cart">
 	<div class="dropdown-list-image mr-3">
 		<img class="rounded-circle" src="img/undraw_profile_1.svg"
@@ -16,7 +18,9 @@
 		<span class="text-danger" @click="removeCart(item.pd_slug)">Remove</span>
 	</div>
 </a>
+
 </div>
+
 </template>
 <script>
 export default {

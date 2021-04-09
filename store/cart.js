@@ -1,10 +1,16 @@
 
-const state = {
+// const state = {
 
-	cart_items:[],
+// 	cart_items:[],
+// 	count:0,
+// 	total_price:0
+// };
+
+const state = () => ({
+  cart_items:[],
 	count:0,
 	total_price:0
-};
+})
 
 const getters = {
 

@@ -53,7 +53,7 @@ export default {
   },
   mounted() {
     let data = JSON.stringify(this.featureProducts);
-    console.log(data);
+    //console.log(data);
   }
 }
 </script>

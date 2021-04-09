@@ -188,7 +188,7 @@
                             <!-- Dropdown - Messages -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in cart-show"
                                 aria-labelledby="messagesDropdown">
-                                <h6 class="dropdown-header" v-if="this.$store.state.cart.count > 0">
+                                <h6 class="dropdown-header" v-show="this.$store.state.cart.count > 0">
                                     <span>Cart Items</span>
                                     <span class="float-right" @click="hideCartMenu"><i class="fas fa-times"></i></span>
                                 </h6>
@@ -196,7 +196,7 @@
                                 <div>
                                     <Cart></Cart>
                                 </div>
-                                <a class="dropdown-item text-center small text-gray-500" href="#" v-if="this.$store.state.cart.count > 0">Checkout</a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#" v-show="this.$store.state.cart.count > 0">Checkout</a>
                             </div>
                         </li>
 
@@ -339,7 +339,7 @@ export default {
     },
 
     mounted() {
-        console.log(JSON.parse(JSON.stringify(this.$store.state.cart.cart_items)));
+       // console.log(JSON.parse(JSON.stringify(this.$store.state.cart.cart_items)));
     }
 }
 </script>
