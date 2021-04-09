@@ -137,7 +137,7 @@ export default {
                         password: this.password
                     }
                  })
-                console.log(response);
+                //console.log(response);
             })
             .catch(err => {
                 this.buttonDisabled = false;
