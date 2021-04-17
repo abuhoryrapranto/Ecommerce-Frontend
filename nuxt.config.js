@@ -49,7 +49,7 @@ export default {
   build: {
   },
   axios: {
-    baseURL: 'https://ecclients.herokuapp.com/api/v1'
+    baseURL: 'https://ecclients.herokuapp.com/api'
   },
   // proxy: {
   //   '/api': {
